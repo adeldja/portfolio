@@ -92,14 +92,6 @@ tel quel, typé contre `lib/types.ts`.
 Chaque `git push` sur la branche `main` déclenche ensuite un nouveau
 déploiement automatique.
 
-## À faire avant mise en ligne
-
-- Remplacer le fichier placeholder `public/cv.pdf` par le vrai CV (le
-  lien de téléchargement dans le hero et la section Contact pointe déjà
-  vers `/cv.pdf`).
-- Renseigner le vrai lien LinkedIn dans `messages/fr.json` et
-  `messages/en.json` (`Contact.linkedinHref`, actuellement `#`).
-
 ## Contact
 
 Adel Djahnit — adel.djahnit.pro@gmail.com
