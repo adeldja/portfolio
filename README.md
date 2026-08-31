@@ -16,11 +16,14 @@ Router) et du CSS pur (pas de Tailwind, pas de framework CSS).
   téléchargement PDF
 - Contact
 
-Toggle FR/EN côté client (React state), sans dépendance à `localStorage`.
+Toggle FR/EN côté client (React state), sans dépendance à `localStorage`
+ni routing par locale.
 
 ## Stack
 
 - Next.js 14 (App Router), React 18, TypeScript
+- `next-intl` pour le FR/EN, en mode client uniquement (pas de routes
+  `/fr` `/en`, pas de middleware)
 - CSS pur avec variables CSS (`app/globals.css`)
 - Polices Google Fonts : Space Grotesk, IBM Plex Sans, IBM Plex Mono
   (via `next/font/google`)
@@ -50,7 +53,7 @@ app/
   layout.tsx        Layout racine, polices, métadonnées
   page.tsx           Assemblage de la page (une seule route)
   globals.css         Design system (couleurs, typo, layout, composants)
-  providers.tsx       Provider du contexte de langue
+  providers.tsx       NextIntlClientProvider + toggle de langue
 components/
   Rail.tsx             Rail de navigation verticale + toggle FR/EN
   Hero.tsx             Section hero
@@ -61,16 +64,20 @@ components/
   Recommendation.tsx   Lettre de recommandation + diplôme
   Contact.tsx          Contact + pied de page
 lib/
-  content.ts             Contenu bilingue FR/EN + types (source unique de vérité)
-  language-context.tsx   Contexte + hook useLanguage()
-  skills.ts               Données des compétences (icônes, liens)
+  locales.ts               Type Locale et liste des langues supportées
+  locale-switch-context.tsx  Contexte pour basculer la langue côté client
+  types.ts                 Types des contenus structurés (projets, expérience...)
+  skills.ts                 Données des compétences (icônes, liens)
+messages/
+  fr.json / en.json        Tout le texte du site, par langue
 ```
 
-Le texte du site vit dans `lib/content.ts` (`content.fr` / `content.en`,
-même forme typée pour les deux langues). `useLanguage()`
-(`lib/language-context.tsx`) donne accès à la langue active et au
-contenu déjà traduit, donc les composants de section n'ont pas de
-logique de traduction à gérer.
+Le texte du site vit dans `messages/fr.json` et `messages/en.json`.
+Les composants lisent ce texte via les hooks `useTranslations()` /
+`useLocale()` de `next-intl` — aucune logique de traduction à gérer
+dans les composants eux-mêmes. Pour les contenus structurés (projets,
+expérience, autres projets), `t.raw("items")` renvoie le tableau JSON
+tel quel, typé contre `lib/types.ts`.
 
 ## Déploiement sur Vercel (gratuit)
 
@@ -90,8 +97,8 @@ déploiement automatique.
 - Remplacer le fichier placeholder `public/cv.pdf` par le vrai CV (le
   lien de téléchargement dans le hero et la section Contact pointe déjà
   vers `/cv.pdf`).
-- Renseigner le vrai lien LinkedIn dans `lib/content.ts`
-  (`contact.linkedinHref`, actuellement `#`).
+- Renseigner le vrai lien LinkedIn dans `messages/fr.json` et
+  `messages/en.json` (`Contact.linkedinHref`, actuellement `#`).
 
 ## Contact
 
