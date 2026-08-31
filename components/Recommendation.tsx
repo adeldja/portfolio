@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useLanguage } from "@/lib/language-context";
-import type { RecommendationItem } from "@/lib/content";
+import { useTranslations } from "next-intl";
+import type { RecommendationItem } from "@/lib/types";
 
 const DOCUMENT_WIDTH = 1488;
 const DOCUMENT_HEIGHT = 2104;
@@ -47,22 +47,17 @@ function RecommendationCard({
 }
 
 export default function Recommendation() {
-  const { t } = useLanguage();
+  const tTitle = useTranslations("SectionTitles");
+  const t = useTranslations("Recommendation");
+  const letter = t.raw("letter") as RecommendationItem;
+  const diploma = t.raw("diploma") as RecommendationItem;
 
   return (
     <section id="recommandation" className="section">
-      <h2 className="section-title">{t.sectionTitles.recommandation}</h2>
+      <h2 className="section-title">{tTitle("recommandation")}</h2>
       <div className="recommendation-grid">
-        <RecommendationCard
-          item={t.recommendation.letter}
-          imageSrc={LETTER_IMAGE_SRC}
-          pdfSrc={LETTER_PDF_SRC}
-        />
-        <RecommendationCard
-          item={t.recommendation.diploma}
-          imageSrc={DIPLOMA_IMAGE_SRC}
-          pdfSrc={DIPLOMA_PDF_SRC}
-        />
+        <RecommendationCard item={letter} imageSrc={LETTER_IMAGE_SRC} pdfSrc={LETTER_PDF_SRC} />
+        <RecommendationCard item={diploma} imageSrc={DIPLOMA_IMAGE_SRC} pdfSrc={DIPLOMA_PDF_SRC} />
       </div>
     </section>
   );

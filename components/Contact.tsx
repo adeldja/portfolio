@@ -1,32 +1,34 @@
 "use client";
 
-import { useLanguage } from "@/lib/language-context";
+import { useTranslations } from "next-intl";
 
 export default function Contact() {
-  const { t } = useLanguage();
+  const tTitle = useTranslations("SectionTitles");
+  const t = useTranslations("Contact");
+  const footer = useTranslations()("Footer");
 
   return (
     <section id="contact" className="section">
-      <h2 className="section-title">{t.sectionTitles.contact}</h2>
+      <h2 className="section-title">{tTitle("contact")}</h2>
       <div className="contact-list">
         <div className="contact-item">
-          <span className="contact-label mono">{t.contact.emailLabel}</span>
-          <a className="contact-value" href={`mailto:${t.contact.email}`}>{t.contact.email}</a>
+          <span className="contact-label mono">{t("emailLabel")}</span>
+          <a className="contact-value" href={`mailto:${t("email")}`}>{t("email")}</a>
         </div>
         <div className="contact-item">
-          <span className="contact-label mono">{t.contact.locationLabel}</span>
-          <span className="contact-value">{t.contact.location}</span>
+          <span className="contact-label mono">{t("locationLabel")}</span>
+          <span className="contact-value">{t("location")}</span>
         </div>
         <div className="contact-item">
           <span className="contact-label mono">CV</span>
-          <a className="contact-value" href={t.contact.cvHref} download>{t.contact.cvLabel}</a>
+          <a className="contact-value" href={t("cvHref")} download>{t("cvLabel")}</a>
         </div>
         <div className="contact-item">
-          <span className="contact-label mono">{t.contact.linkedinLabel}</span>
-          <a className="contact-value" href={t.contact.linkedinHref} target="_blank" rel="noopener noreferrer">{t.contact.linkedinLabel}</a>
+          <span className="contact-label mono">{t("linkedinLabel")}</span>
+          <a className="contact-value" href={t("linkedinHref")} target="_blank" rel="noopener noreferrer">{t("linkedinLabel")}</a>
         </div>
       </div>
-      <p className="footer mono">{t.footer}</p>
+      <p className="footer mono">{footer}</p>
     </section>
   );
 }

@@ -1,15 +1,18 @@
 "use client";
 
-import { useLanguage } from "@/lib/language-context";
+import { useTranslations } from "next-intl";
+import type { ExperienceEntry } from "@/lib/types";
 
 export default function Experience() {
-  const { t } = useLanguage();
+  const tTitle = useTranslations("SectionTitles");
+  const t = useTranslations("Experience");
+  const items = t.raw("items") as ExperienceEntry[];
 
   return (
     <section id="experience" className="section">
-      <h2 className="section-title">{t.sectionTitles.experience}</h2>
+      <h2 className="section-title">{tTitle("experience")}</h2>
       <div className="timeline">
-        {t.experience.map((entry) => (
+        {items.map((entry) => (
           <div className="timeline-item" key={entry.date}>
             <span className="timeline-dot" />
             <p className="timeline-date mono">{entry.date}</p>

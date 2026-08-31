@@ -1,9 +1,10 @@
 "use client";
 
-import { useLanguage } from "@/lib/language-context";
+import { useTranslations } from "next-intl";
 
 export default function Hero() {
-  const { t } = useLanguage();
+  const t = useTranslations("Hero");
+  const cvHref = useTranslations("Contact")("cvHref");
 
   return (
     <section id="hero" className="hero">
@@ -19,16 +20,16 @@ export default function Hero() {
         <circle cx="200" cy="200" r="70" stroke="#46626C" strokeWidth="1.5" strokeOpacity="0.4" />
       </svg>
       <div className="hero-content">
-        <p className="hero-kicker mono hero-animate">{t.hero.kicker}</p>
-        <h1 className="hero-title hero-animate">{t.hero.title}</h1>
-        <p className="hero-role hero-animate">{t.hero.role}</p>
-        <p className="hero-pitch hero-animate">{t.hero.pitch}</p>
+        <p className="hero-kicker mono hero-animate">{t("kicker")}</p>
+        <h1 className="hero-title hero-animate">{t("title")}</h1>
+        <p className="hero-role hero-animate">{t("role")}</p>
+        <p className="hero-pitch hero-animate">{t("pitch")}</p>
         <div className="hero-actions hero-animate">
           <a href="#projets" className="btn btn-primary">
-            {t.hero.ctaPrimary}
+            {t("ctaPrimary")}
           </a>
-          <a href={t.contact.cvHref ?? "/cv.pdf"} className="btn btn-outline" download>
-            {t.hero.ctaSecondary}
+          <a href={cvHref} className="btn btn-outline" download>
+            {t("ctaSecondary")}
           </a>
         </div>
       </div>

@@ -1,11 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useLanguage } from "@/lib/language-context";
-import type { Lang, NavLabels } from "@/lib/content";
+import { useLocale, useTranslations } from "next-intl";
+import { useSetLocale } from "@/lib/locale-switch-context";
+import type { Locale } from "@/lib/locales";
 
 interface NavItem {
-  key: keyof NavLabels;
+  key: "hero" | "projets" | "experience" | "autres" | "competences" | "recommandation" | "contact";
   id: string;
 }
 
@@ -20,29 +21,29 @@ const NAV_ITEMS: NavItem[] = [
 ];
 
 interface LangButtonsProps {
-  lang: Lang;
-  setLang: (lang: Lang) => void;
+  locale: Locale;
+  setLocale: (locale: Locale) => void;
   className: string;
 }
 
-function LangButtons({ lang, setLang, className }: LangButtonsProps) {
+function LangButtons({ locale, setLocale, className }: LangButtonsProps) {
   return (
     <div className={className}>
       <button
         type="button"
         className="lang-toggle-btn"
-        data-active={lang === "fr"}
-        aria-pressed={lang === "fr"}
-        onClick={() => setLang("fr")}
+        data-active={locale === "fr"}
+        aria-pressed={locale === "fr"}
+        onClick={() => setLocale("fr")}
       >
         FR
       </button>
       <button
         type="button"
         className="lang-toggle-btn"
-        data-active={lang === "en"}
-        aria-pressed={lang === "en"}
-        onClick={() => setLang("en")}
+        data-active={locale === "en"}
+        aria-pressed={locale === "en"}
+        onClick={() => setLocale("en")}
       >
         EN
       </button>
@@ -51,7 +52,10 @@ function LangButtons({ lang, setLang, className }: LangButtonsProps) {
 }
 
 export default function Rail() {
-  const { lang, setLang, t } = useLanguage();
+  const locale = useLocale() as Locale;
+  const setLocale = useSetLocale();
+  const t = useTranslations("Nav");
+  const tHero = useTranslations("Hero");
   const [activeId, setActiveId] = useState("hero");
 
   useEffect(() => {
@@ -98,10 +102,10 @@ export default function Rail() {
     <>
       <aside className="rail">
         <div className="rail-inner">
-          <p className="rail-name mono">{t.hero.title}</p>
+          <p className="rail-name mono">{tHero("title")}</p>
           <ul className="rail-nav">
             {NAV_ITEMS.map((item) => {
-              const label = t.nav[item.key];
+              const label = t(item.key);
               return (
                 <li key={item.id}>
                   <a
@@ -118,11 +122,15 @@ export default function Rail() {
             })}
           </ul>
           <div className="rail-lang">
-            <LangButtons lang={lang} setLang={setLang} className="lang-toggle" />
+            <LangButtons locale={locale} setLocale={setLocale} className="lang-toggle" />
           </div>
         </div>
       </aside>
-      <LangButtons lang={lang} setLang={setLang} className="lang-toggle-mobile lang-toggle" />
+      <LangButtons
+        locale={locale}
+        setLocale={setLocale}
+        className="lang-toggle-mobile lang-toggle"
+      />
     </>
   );
 }

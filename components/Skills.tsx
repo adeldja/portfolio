@@ -1,6 +1,6 @@
 "use client";
 
-import { useLanguage } from "@/lib/language-context";
+import { useTranslations } from "next-intl";
 import { skillCategories, type SkillIcon } from "@/lib/skills";
 
 function SkillGlyph({ icon }: { icon: SkillIcon }) {
@@ -17,11 +17,11 @@ function SkillGlyph({ icon }: { icon: SkillIcon }) {
 }
 
 export default function Skills() {
-  const { t } = useLanguage();
+  const t = useTranslations("SectionTitles");
 
   return (
     <section id="competences" className="section">
-      <h2 className="section-title">{t.sectionTitles.competences}</h2>
+      <h2 className="section-title">{t("competences")}</h2>
       <div className="skills-list">
         {skillCategories.map((category) => (
           <div className="skill-row" key={category.label}>

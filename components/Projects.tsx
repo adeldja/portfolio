@@ -1,15 +1,18 @@
 "use client";
 
-import { useLanguage } from "@/lib/language-context";
+import { useTranslations } from "next-intl";
+import type { FeaturedProject } from "@/lib/types";
 
 export default function Projects() {
-  const { t } = useLanguage();
+  const tTitle = useTranslations("SectionTitles");
+  const t = useTranslations("Projects");
+  const items = t.raw("items") as FeaturedProject[];
 
   return (
     <section id="projets" className="section">
-      <h2 className="section-title">{t.sectionTitles.projets}</h2>
+      <h2 className="section-title">{tTitle("projets")}</h2>
       <div className="project-list">
-        {t.projects.map((project) => (
+        {items.map((project) => (
           <article className="project-card" key={project.id}>
             <div className="project-card-header">
               <h3 className="project-name">{project.name}</h3>
