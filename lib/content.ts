@@ -120,7 +120,7 @@ export const content: Record<Lang, LocaleContent> = {
       title: "Adel Djahnit",
       role: "Développeur Fullstack — React, .NET, Azure",
       pitch:
-        "Actuellement en mission chez FIBA à Mies, où je développe des outils internes pour la fédération. Basé à Divonne-les-Bains, je recherche une opportunité stable en Suisse à l'issue de ce stage.",
+        "Actuellement en mission chez FIBA à Mies, où je développe des outils internes pour la fédération. Basé à Divonne-les-Bains, statut frontalier, je recherche une opportunité stable en Suisse à l'issue de ce stage.",
       ctaPrimary: "Voir mes projets",
       ctaSecondary: "Télécharger mon CV",
     },
@@ -401,13 +401,3 @@ export const content: Record<Lang, LocaleContent> = {
     footer: "Designed and built by Adel Djahnit.",
   },
 };
-
-export const sectionOrder: (keyof NavLabels)[] = [
-  "hero",
-  "projets",
-  "experience",
-  "autres",
-  "competences",
-  "recommandation",
-  "contact",
-];
