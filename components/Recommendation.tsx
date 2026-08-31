@@ -1,7 +1,11 @@
 "use client";
 
+import Image from "next/image";
 import { useLanguage } from "@/lib/language-context";
 import type { RecommendationItem } from "@/lib/content";
+
+const DOCUMENT_WIDTH = 1488;
+const DOCUMENT_HEIGHT = 2104;
 
 const LETTER_IMAGE_SRC = "/recommendation-letter.jpg";
 const LETTER_PDF_SRC = "/recommendation-letter.pdf";
@@ -21,7 +25,14 @@ function RecommendationCard({
     <div className="recommendation-item">
       <p className="recommendation-label mono">{item.label}</p>
       <div className="recommendation-frame">
-        <img className="recommendation-image" src={imageSrc} alt={item.imageAlt} />
+        <Image
+          className="recommendation-image"
+          src={imageSrc}
+          alt={item.imageAlt}
+          width={DOCUMENT_WIDTH}
+          height={DOCUMENT_HEIGHT}
+          sizes="(max-width: 480px) 100vw, 340px"
+        />
       </div>
       <a
         className="recommendation-download"
