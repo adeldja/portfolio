@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Space_Grotesk, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import { Providers } from "./providers";
+import frMessages from "@/messages/fr.json";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -26,9 +27,8 @@ const ibmPlexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Adel Djahnit — Développeur Fullstack",
-  description:
-    "Développeur Fullstack (React, .NET, Azure), actuellement en mission chez FIBA. Disponible pour un CDI en Suisse dès novembre 2026.",
+  title: frMessages.Meta.title,
+  description: frMessages.Meta.description,
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {

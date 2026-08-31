@@ -1,0 +1,139 @@
+{
+  "Meta": {
+    "title": "Adel Djahnit — Développeur Fullstack",
+    "description": "Développeur Fullstack (React, .NET, Azure), actuellement en mission chez FIBA. Disponible pour un CDI en Suisse dès novembre 2026."
+  },
+  "Nav": {
+    "hero": "Accueil",
+    "projets": "Projets",
+    "experience": "Expérience",
+    "autres": "Autres projets",
+    "competences": "Compétences",
+    "recommandation": "Recommandation",
+    "contact": "Contact"
+  },
+  "LangSwitch": {
+    "current": "FR",
+    "target": "EN",
+    "ariaLabel": "Passer le site en anglais"
+  },
+  "Hero": {
+    "kicker": "Disponible pour un CDI en Suisse dès novembre 2026",
+    "title": "Adel Djahnit",
+    "role": "Développeur Fullstack — React, .NET, Azure",
+    "pitch": "Actuellement en mission chez FIBA à Mies, où je développe des outils internes pour la fédération. Basé à Divonne-les-Bains avec le statut de frontalier, je suis à la recherche d'une opportunité stable en Suisse à l'issue de ce stage.",
+    "ctaPrimary": "Voir mes projets",
+    "ctaSecondary": "Télécharger mon CV"
+  },
+  "SectionTitles": {
+    "projets": "Projets phares",
+    "experience": "Expérience",
+    "autres": "Autres projets",
+    "competences": "Compétences",
+    "recommandation": "Recommandation",
+    "contact": "Contact"
+  },
+  "Projects": {
+    "items": [
+      {
+        "id": "fiba",
+        "name": "FIBA",
+        "period": "Juin 2026 — en cours",
+        "role": "Développeur Fullstack",
+        "context": "Auparavant, une organisation souhaitant accéder à l'API de données de la fédération devait passer par un formulaire papier, suivi de plusieurs échanges avec le staff avant l'obtention des accès.",
+        "approach": "Je développe le formulaire de souscription automatisé destiné à remplacer ce processus : le candidat renseigne ses informations, le staff valide la demande, puis les accès sont créés automatiquement. Développé en C# / ASP.NET Core côté backend et en Next.js / React côté frontend, sur l'infrastructure Azure de la fédération.",
+        "result": "Le formulaire est déjà opérationnel. Le projet étant récent, aucune donnée chiffrée n'est encore disponible, mais le gain de temps pour l'équipe est immédiat.",
+        "stack": ["C#", "ASP.NET Core", "Next.js", "React", "Azure SQL Server", "Azure DevOps"],
+        "linkHref": null,
+        "linkLabel": "Projet interne — non public"
+      },
+      {
+        "id": "bonee",
+        "name": "Bonee",
+        "period": "2024 — en production",
+        "role": "Développeur",
+        "context": "Application mobile de gestion de budget et d'épargne. J'ai réalisé les maquettes en collaboration avec Melvil Cherruau, qui les validait, puis développé l'application dans son intégralité.",
+        "approach": "Développée entièrement en Flutter/Dart, une technologie que j'ai apprise dans le cadre de ce projet, incluant la gestion du stockage des données, la logique de validation et l'intégration des paiements in-app via RevenueCat.",
+        "result": "Disponible sur l'App Store et le Play Store depuis moins de deux mois, avec une dizaine d'utilisateurs actifs à ce jour.",
+        "stack": ["Flutter", "Dart", "RevenueCat", "iOS", "Android"],
+        "linkHref": "https://apps.apple.com/fr/app/bonee-budget-%C3%A9pargne/id6762883127",
+        "linkLabel": "Voir sur l'App Store"
+      },
+      {
+        "id": "kunagi",
+        "name": "Kunagi",
+        "period": "2023 — 2025",
+        "role": "Développeur Fullstack (alternance)",
+        "context": "L'application était déjà en production à mon arrivée (React Native / Expo, backend Laravel). Pendant deux ans, j'ai développé de nouvelles fonctionnalités et corrigé des anomalies, souvent en tant que seul développeur sur le projet.",
+        "approach": "J'ai géré seul le renouvellement des certificats iOS et résolu un incident critique sur la file de notifications, où environ 3 000 messages se sont retrouvés prêts à être envoyés simultanément ; j'ai pu limiter l'envoi à une centaine de messages. J'ai également ajouté des parcours différenciés selon le profil utilisateur, par exemple un profil « jardinier » disposant de réglages spécifiques.",
+        "result": "Ma contribution est mentionnée dans ma lettre de recommandation rédigée par la fondatrice de Kunagi (voir ci-dessous).",
+        "stack": ["React Native", "Expo", "Laravel", "API REST", "CI/CD"],
+        "linkHref": null,
+        "linkLabel": "Projet interne — non public"
+      }
+    ]
+  },
+  "Experience": {
+    "items": [
+      {
+        "date": "Juin 2026 — en cours",
+        "role": "Développeur Fullstack",
+        "org": "FIBA, Mies (Suisse)"
+      },
+      {
+        "date": "2023 — 2025",
+        "role": "Développeur Fullstack",
+        "org": "Kunagi"
+      },
+      {
+        "date": "Mai — Sept. 2022",
+        "role": "Développeur Web",
+        "org": "OsUp — prototype de rapprochement bancaire (Vue.js) et site vitrine"
+      },
+      {
+        "date": "Mars — Juin 2021",
+        "role": "Développeur Web",
+        "org": "JSL Judo — site associatif (Symfony)"
+      }
+    ]
+  },
+  "OtherProjects": {
+    "items": [
+      {
+        "name": "StriveMatch",
+        "description": "Projet réalisé dans le cadre de mon master : une plateforme de mise en relation entre pratiquants sportifs, facilitant l'organisation de sessions.",
+        "href": "https://github.com/StriveMatch/strive",
+        "linkLabel": "Voir le code"
+      },
+      {
+        "name": "Indep-com",
+        "description": "Projet réalisé durant mes études : un site vitrine et des outils de communication destinés aux indépendants.",
+        "href": "https://github.com/Indep-com/indep",
+        "linkLabel": "Voir le code"
+      }
+    ]
+  },
+  "Recommendation": {
+    "letter": {
+      "label": "Lettre de recommandation",
+      "imageAlt": "Première page de la lettre de recommandation d'Hélène Cayla, fondatrice de Kunagi",
+      "downloadLabel": "Télécharger la lettre complète (PDF)"
+    },
+    "diploma": {
+      "label": "Diplôme",
+      "imageAlt": "Attestation de réussite — Mastère Expert Développement Web, Bordeaux Ynov Campus",
+      "downloadLabel": "Télécharger l'attestation (PDF)"
+    }
+  },
+  "Contact": {
+    "emailLabel": "Email",
+    "email": "adel.djahnit.pro@gmail.com",
+    "locationLabel": "Lieu",
+    "location": "Divonne-les-Bains, France — statut de frontalier",
+    "cvLabel": "Télécharger mon CV",
+    "cvHref": "/cv.pdf",
+    "linkedinLabel": "LinkedIn",
+    "linkedinHref": "#"
+  },
+  "Footer": "Conçu et développé par Adel Djahnit."
+}

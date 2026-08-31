@@ -1,0 +1,139 @@
+{
+  "Meta": {
+    "title": "Adel Djahnit — Fullstack Developer",
+    "description": "Fullstack Developer (React, .NET, Azure), currently on assignment at FIBA. Available for a permanent role in Switzerland from November 2026."
+  },
+  "Nav": {
+    "hero": "Home",
+    "projets": "Work",
+    "experience": "Experience",
+    "autres": "Other projects",
+    "competences": "Skills",
+    "recommandation": "Recommendation",
+    "contact": "Contact"
+  },
+  "LangSwitch": {
+    "current": "EN",
+    "target": "FR",
+    "ariaLabel": "Switch site to French"
+  },
+  "Hero": {
+    "kicker": "Available for a permanent role in Switzerland from November 2026",
+    "title": "Adel Djahnit",
+    "role": "Fullstack Developer — React, .NET, Azure",
+    "pitch": "Currently on assignment at FIBA in Mies, where I develop internal tools for the federation. Based in Divonne-les-Bains as a registered cross-border worker, I am seeking a permanent position in Switzerland following this internship.",
+    "ctaPrimary": "See my work",
+    "ctaSecondary": "Download CV"
+  },
+  "SectionTitles": {
+    "projets": "Featured projects",
+    "experience": "Experience",
+    "autres": "Other projects",
+    "competences": "Skills",
+    "recommandation": "Recommendation",
+    "contact": "Contact"
+  },
+  "Projects": {
+    "items": [
+      {
+        "id": "fiba",
+        "name": "FIBA",
+        "period": "June 2026 — ongoing",
+        "role": "Fullstack Developer",
+        "context": "Previously, an organization requesting access to the federation's data API had to submit a paper form, followed by several rounds of correspondence with staff before access was granted.",
+        "approach": "I am developing the automated subscription form intended to replace this process: the applicant submits their information, staff validates the request, and access is then provisioned automatically. Built in C# / ASP.NET Core on the backend and Next.js / React on the frontend, on the federation's Azure infrastructure.",
+        "result": "The form is already operational. As the project is recent, no quantified data is available yet, but the time saved for the team is immediate.",
+        "stack": ["C#", "ASP.NET Core", "Next.js", "React", "Azure SQL Server", "Azure DevOps"],
+        "linkHref": null,
+        "linkLabel": "Internal project — not public"
+      },
+      {
+        "id": "bonee",
+        "name": "Bonee",
+        "period": "2024 — in production",
+        "role": "Developer",
+        "context": "Mobile budgeting and savings application. I designed the mockups in collaboration with Melvil Cherruau, who reviewed and approved them, and developed the application in its entirety.",
+        "approach": "Built entirely in Flutter/Dart, a technology I learned specifically for this project, including data storage, validation logic, and in-app payment integration via RevenueCat.",
+        "result": "Available on the App Store and Play Store for under two months, with around ten active users to date.",
+        "stack": ["Flutter", "Dart", "RevenueCat", "iOS", "Android"],
+        "linkHref": "https://apps.apple.com/fr/app/bonee-budget-%C3%A9pargne/id6762883127",
+        "linkLabel": "View on the App Store"
+      },
+      {
+        "id": "kunagi",
+        "name": "Kunagi",
+        "period": "2023 — 2025",
+        "role": "Fullstack Developer (work-study)",
+        "context": "The application was already in production when I joined (React Native / Expo, Laravel backend). Over two years, I developed new features and fixed issues, often as the sole developer on the project.",
+        "approach": "I independently managed iOS certificate renewals and resolved a critical incident on the notification queue, where approximately 3,000 messages were about to be sent simultaneously; I was able to limit delivery to around a hundred messages. I also added user-specific flows depending on profile, such as a \"gardener\" profile with dedicated settings.",
+        "result": "My contribution is mentioned in my letter of recommendation from Kunagi's founder (see below).",
+        "stack": ["React Native", "Expo", "Laravel", "REST API", "CI/CD"],
+        "linkHref": null,
+        "linkLabel": "Internal project — not public"
+      }
+    ]
+  },
+  "Experience": {
+    "items": [
+      {
+        "date": "June 2026 — ongoing",
+        "role": "Fullstack Developer",
+        "org": "FIBA, Mies (Switzerland)"
+      },
+      {
+        "date": "2023 — 2025",
+        "role": "Fullstack Developer",
+        "org": "Kunagi"
+      },
+      {
+        "date": "May — Sept. 2022",
+        "role": "Web Developer",
+        "org": "OsUp — bank reconciliation prototype (Vue.js) and showcase website"
+      },
+      {
+        "date": "March — June 2021",
+        "role": "Web Developer",
+        "org": "JSL Judo — club website (Symfony)"
+      }
+    ]
+  },
+  "OtherProjects": {
+    "items": [
+      {
+        "name": "StriveMatch",
+        "description": "Master's project: I built a platform connecting sports practitioners to help organize sessions between individuals.",
+        "href": "https://github.com/StriveMatch/strive",
+        "linkLabel": "View code"
+      },
+      {
+        "name": "Indep-com",
+        "description": "School project: I built a showcase website and communication tools for freelancers.",
+        "href": "https://github.com/Indep-com/indep",
+        "linkLabel": "View code"
+      }
+    ]
+  },
+  "Recommendation": {
+    "letter": {
+      "label": "Recommendation letter",
+      "imageAlt": "First page of the recommendation letter from Hélène Cayla, founder of Kunagi",
+      "downloadLabel": "Download the full letter (PDF)"
+    },
+    "diploma": {
+      "label": "Diploma",
+      "imageAlt": "Certificate of completion — Master's in Web Development, Bordeaux Ynov Campus",
+      "downloadLabel": "Download the certificate (PDF)"
+    }
+  },
+  "Contact": {
+    "emailLabel": "Email",
+    "email": "adel.djahnit.pro@gmail.com",
+    "locationLabel": "Location",
+    "location": "Divonne-les-Bains, France — registered cross-border worker",
+    "cvLabel": "Download CV",
+    "cvHref": "/cv.pdf",
+    "linkedinLabel": "LinkedIn",
+    "linkedinHref": "#"
+  },
+  "Footer": "Designed and built by Adel Djahnit."
+}
