@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Space_Grotesk, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
-import { Providers } from "./providers";
 import frMessages from "@/messages/fr.json";
 import "./globals.css";
 
@@ -37,7 +36,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body
         className={`${spaceGrotesk.variable} ${ibmPlexSans.variable} ${ibmPlexMono.variable}`}
       >
-        <Providers>{children}</Providers>
+        {children}
       </body>
     </html>
   );
