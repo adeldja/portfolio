@@ -1,50 +1,33 @@
-<div align="center">
+# Portfolio — Adel Djahnit
 
-# Adel Djahnit — Portfolio
-
-Site portfolio personnel, one-page et bilingue FR/EN, présentant mon
-parcours de développeur fullstack : projets phares, expérience,
-compétences et recommandation.
+Site portfolio one-page, bilingue FR/EN, construit avec Next.js 14 (App
+Router) et du CSS pur (pas de Tailwind, pas de framework CSS).
 
 ![Aperçu du hero](.github/hero-screenshot.png)
 
-</div>
+## Sections
 
-## À propos
+- Projets phares (FIBA, Bonee, Kunagi) : contexte, ce que j'ai fait,
+  résultat, lien vers le projet quand il est public
+- Expérience : timeline
+- Autres projets, avec lien vers le code
+- Compétences : icônes cliquables vers le site officiel de chaque techno
+- Recommandation : lettre de recommandation et diplôme, en image +
+  téléchargement PDF
+- Contact
 
-Ce dépôt contient le code source de mon portfolio : une page unique,
-sombre et sobre, pensée comme une vitrine directe plutôt qu'un site
-vitrine générique — pas de template, pas de framework CSS, chaque
-composant et chaque style écrits à la main pour garder un contrôle fin
-sur le rendu.
+Toggle FR/EN côté client (React state), sans dépendance à `localStorage`.
 
-**Ce que le site présente :**
+## Stack
 
-- 🏀 **Projets phares** — FIBA, Bonee, Kunagi — sous forme d'études de
-  cas courtes (contexte → ce que j'ai fait → résultat), avec lien vers
-  le projet quand il est public
-- 🧭 **Expérience** — timeline compacte de mon parcours
-- 🗂️ **Autres projets** — projets d'école/master, avec lien vers le code
-- 🛠️ **Compétences** — grille d'icônes cliquables vers la doc officielle
-  de chaque techno
-- ✉️ **Recommandation** — vraie lettre de recommandation et diplôme,
-  affichés en image + téléchargement PDF
-- 🌐 **FR/EN** — bascule de langue instantanée côté client, sans
-  rechargement ni dépendance à `localStorage`
-
-## Stack technique
-
-| | |
-|---|---|
-| Framework | [Next.js 14](https://nextjs.org) (App Router) + React 18 |
-| Langage | TypeScript |
-| Style | CSS pur, variables CSS — pas de Tailwind ni de framework CSS |
-| Polices | Space Grotesk, IBM Plex Sans, IBM Plex Mono (`next/font/google`) |
-| Icônes | [`simple-icons`](https://simpleicons.org) (logos de marque) + [`react-icons`](https://react-icons.github.io/react-icons/) (fallback générique) |
-| Déploiement | [Vercel](https://vercel.com) |
-
-Aucune dépendance lourde type `framer-motion` : l'animation d'entrée du
-hero est en CSS pur, une seule séquence au chargement.
+- Next.js 14 (App Router), React 18, TypeScript
+- CSS pur avec variables CSS (`app/globals.css`)
+- Polices Google Fonts : Space Grotesk, IBM Plex Sans, IBM Plex Mono
+  (via `next/font/google`)
+- Icônes : `simple-icons` (logos de marque) + `react-icons` (fallback
+  générique quand la marque n'a pas d'icône libre, ex. Azure)
+- Pas de dépendance type framer-motion : l'animation d'entrée du hero
+  est en CSS pur
 
 ## Démarrer en local
 
@@ -83,14 +66,11 @@ lib/
   skills.ts               Données des compétences (icônes, liens)
 ```
 
-## Contenu bilingue
-
-Tout le texte du site vit dans `lib/content.ts`, sous la forme
-`content.fr` / `content.en`, avec un typage TypeScript qui garantit que
-les deux langues ont exactement la même forme. Le composant
-`LanguageProvider` (`lib/language-context.tsx`) expose un hook
-`useLanguage()` qui donne accès à la langue active et au contenu déjà
-traduit — aucun composant de section ne gère la traduction lui-même.
+Le texte du site vit dans `lib/content.ts` (`content.fr` / `content.en`,
+même forme typée pour les deux langues). `useLanguage()`
+(`lib/language-context.tsx`) donne accès à la langue active et au
+contenu déjà traduit, donc les composants de section n'ont pas de
+logique de traduction à gérer.
 
 ## Déploiement sur Vercel (gratuit)
 
@@ -101,7 +81,6 @@ traduit — aucun composant de section ne gère la traduction lui-même.
 4. Vercel détecte automatiquement Next.js — laisser les réglages par
    défaut (`Build Command: next build`, `Output Directory: .next`).
 5. Cliquer sur **Deploy**.
-6. Le site est en ligne sur une URL du type `nom-du-projet.vercel.app`.
 
 Chaque `git push` sur la branche `main` déclenche ensuite un nouveau
 déploiement automatique.
@@ -116,4 +95,4 @@ déploiement automatique.
 
 ## Contact
 
-**Adel Djahnit** — adel.djahnit.pro@gmail.com
+Adel Djahnit — adel.djahnit.pro@gmail.com
