@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
-import { useSetLocale } from "@/lib/locale-switch-context";
+import { useSetLocale } from "@/app/providers";
 import type { Locale } from "@/lib/locales";
 
 interface NavItem {
