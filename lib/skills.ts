@@ -12,6 +12,7 @@ import {
   siDocker,
   siDart,
   siFlutter,
+  siExpo,
   siApple,
   siAndroid,
 } from "simple-icons";
@@ -96,6 +97,11 @@ export const skillCategories: SkillCategory[] = [
         name: "Flutter",
         href: "https://flutter.dev",
         icon: { kind: "brand", icon: siFlutter },
+      },
+      {
+        name: "Expo",
+        href: "https://expo.dev",
+        icon: { kind: "brand", icon: siExpo },
       },
       {
         name: "iOS",
