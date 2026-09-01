@@ -29,3 +29,8 @@ export interface RecommendationItem {
   imageAlt: string;
   downloadLabel: string;
 }
+
+export interface LanguageItem {
+  name: string;
+  level: string;
+}

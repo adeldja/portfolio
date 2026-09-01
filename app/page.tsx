@@ -10,10 +10,11 @@ import enMessages from "@/messages/en.json";
 import Rail from "@/components/Rail";
 import Hero from "@/components/Hero";
 import Projects from "@/components/Projects";
+import Recommendation from "@/components/Recommendation";
 import Experience from "@/components/Experience";
 import OtherProjects from "@/components/OtherProjects";
 import Skills from "@/components/Skills";
-import Recommendation from "@/components/Recommendation";
+import Languages from "@/components/Languages";
 import Contact from "@/components/Contact";
 
 const messagesByLocale: Record<Locale, typeof frMessages> = {
@@ -40,10 +41,11 @@ export default function Home() {
           <div className="main-inner">
             <Hero />
             <Projects />
+            <Recommendation />
             <Experience />
             <OtherProjects />
             <Skills />
-            <Recommendation />
+            <Languages />
             <Contact />
           </div>
         </main>

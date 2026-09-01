@@ -6,17 +6,26 @@ import { useSetLocale } from "@/lib/locale-context";
 import type { Locale } from "@/lib/locales";
 
 interface NavItem {
-  key: "hero" | "projets" | "experience" | "autres" | "competences" | "recommandation" | "contact";
+  key:
+    | "hero"
+    | "projets"
+    | "recommandation"
+    | "experience"
+    | "autres"
+    | "competences"
+    | "langues"
+    | "contact";
   id: string;
 }
 
 const NAV_ITEMS: NavItem[] = [
   { key: "hero", id: "hero" },
   { key: "projets", id: "projets" },
+  { key: "recommandation", id: "recommandation" },
   { key: "experience", id: "experience" },
   { key: "autres", id: "autres-projets" },
   { key: "competences", id: "competences" },
-  { key: "recommandation", id: "recommandation" },
+  { key: "langues", id: "langues" },
   { key: "contact", id: "contact" },
 ];
 
