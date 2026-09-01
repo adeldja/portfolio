@@ -1,15 +1,16 @@
 {
   "Meta": {
-    "title": "Adel Djahnit — Développeur Fullstack",
-    "description": "Développeur Fullstack (React, .NET, Azure), actuellement en mission chez FIBA. Disponible pour un CDI en Suisse dès novembre 2026."
+    "title": "Adel Djahnit — Développeur Fullstack React & .NET | Genève, Suisse romande",
+    "description": "Développeur Fullstack (React, .NET, Azure) en mission à la Fédération Internationale de Basketball, près de Genève. Permis G frontalier, disponible dès novembre 2026 en Suisse romande."
   },
   "Nav": {
     "hero": "Accueil",
     "projets": "Projets",
+    "recommandation": "Recommandation",
     "experience": "Expérience",
     "autres": "Autres projets",
     "competences": "Compétences",
-    "recommandation": "Recommandation",
+    "langues": "Langues",
     "contact": "Contact"
   },
   "LangSwitch": {
@@ -18,19 +19,19 @@
     "ariaLabel": "Passer le site en anglais"
   },
   "Hero": {
-    "kicker": "Disponible pour un CDI en Suisse dès novembre 2026",
     "title": "Adel Djahnit",
     "role": "Développeur Fullstack — React, .NET, Azure",
-    "pitch": "Actuellement en mission chez FIBA à Mies, où je développe des outils internes pour la fédération. Basé à Divonne-les-Bains avec le statut de frontalier, je suis à la recherche d'une opportunité stable en Suisse à l'issue de ce stage.",
+    "pitch": "Je développe des applications métier pour la Fédération Internationale de Basketball, à Mies, près de Genève. Basé à Divonne-les-Bains, à 20 minutes de Genève, avec un permis G frontalier.",
     "ctaPrimary": "Voir mes projets",
     "ctaSecondary": "Télécharger mon CV"
   },
   "SectionTitles": {
     "projets": "Projets phares",
+    "recommandation": "Recommandation",
     "experience": "Expérience",
     "autres": "Autres projets",
     "competences": "Compétences",
-    "recommandation": "Recommandation",
+    "langues": "Langues",
     "contact": "Contact"
   },
   "Projects": {
@@ -42,7 +43,7 @@
         "role": "Développeur Fullstack",
         "context": "Auparavant, une organisation souhaitant accéder à l'API de données de la fédération devait passer par un formulaire papier, suivi de plusieurs échanges avec le staff avant l'obtention des accès.",
         "approach": "Je développe le formulaire de souscription automatisé destiné à remplacer ce processus : le candidat renseigne ses informations, le staff valide la demande, puis les accès sont créés automatiquement. Développé en C# / ASP.NET Core côté backend et en Next.js / React côté frontend, sur l'infrastructure Azure de la fédération.",
-        "result": "Le formulaire est déjà opérationnel. Le projet étant récent, aucune donnée chiffrée n'est encore disponible, mais le gain de temps pour l'équipe est immédiat.",
+        "result": "Le formulaire est opérationnel. Il remplace un circuit qui mobilisait plusieurs personnes du staff à chaque demande.",
         "stack": ["C#", "ASP.NET Core", "Next.js", "React", "Azure SQL Server", "Azure DevOps"],
         "linkHref": null,
         "linkLabel": "Projet interne — non public"
@@ -125,11 +126,20 @@
       "downloadLabel": "Télécharger l'attestation (PDF)"
     }
   },
+  "Languages": {
+    "items": [
+      { "name": "Français", "level": "Langue maternelle" },
+      { "name": "Anglais", "level": "Courant (B2) — langue de travail quotidienne à la FIBA" },
+      { "name": "Espagnol", "level": "Notions (A2)" }
+    ]
+  },
   "Contact": {
     "emailLabel": "Email",
     "email": "adel.djahnit.pro@gmail.com",
     "locationLabel": "Lieu",
-    "location": "Divonne-les-Bains, France — statut de frontalier",
+    "location": "Divonne-les-Bains, France — permis G frontalier",
+    "availabilityLabel": "Disponibilité",
+    "availability": "Dès novembre 2026 — Suisse romande (Genève, Vaud)",
     "cvLabel": "Télécharger mon CV",
     "cvHref": "/cv-Adel-Djahnit.pdf",
     "linkedinLabel": "LinkedIn",

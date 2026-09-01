@@ -1,15 +1,16 @@
 {
   "Meta": {
-    "title": "Adel Djahnit — Fullstack Developer",
-    "description": "Fullstack Developer (React, .NET, Azure), currently on assignment at FIBA. Available for a permanent role in Switzerland from November 2026."
+    "title": "Adel Djahnit — Fullstack Developer React & .NET | Geneva, Switzerland",
+    "description": "Fullstack developer (React, .NET, Azure) working at the International Basketball Federation near Geneva. Swiss cross-border permit, available from November 2026."
   },
   "Nav": {
     "hero": "Home",
     "projets": "Work",
+    "recommandation": "Recommendation",
     "experience": "Experience",
     "autres": "Other projects",
     "competences": "Skills",
-    "recommandation": "Recommendation",
+    "langues": "Languages",
     "contact": "Contact"
   },
   "LangSwitch": {
@@ -18,19 +19,19 @@
     "ariaLabel": "Switch site to French"
   },
   "Hero": {
-    "kicker": "Available for a permanent role in Switzerland from November 2026",
     "title": "Adel Djahnit",
     "role": "Fullstack Developer — React, .NET, Azure",
-    "pitch": "Currently on assignment at FIBA in Mies, where I develop internal tools for the federation. Based in Divonne-les-Bains as a registered cross-border worker, I am seeking a permanent position in Switzerland following this internship.",
+    "pitch": "I build business applications for the International Basketball Federation in Mies, near Geneva. Based in Divonne-les-Bains, 20 minutes from Geneva, with a Swiss cross-border (permit G) status.",
     "ctaPrimary": "See my work",
     "ctaSecondary": "Download CV"
   },
   "SectionTitles": {
     "projets": "Featured projects",
+    "recommandation": "Recommendation",
     "experience": "Experience",
     "autres": "Other projects",
     "competences": "Skills",
-    "recommandation": "Recommendation",
+    "langues": "Languages",
     "contact": "Contact"
   },
   "Projects": {
@@ -42,7 +43,7 @@
         "role": "Fullstack Developer",
         "context": "Previously, an organization requesting access to the federation's data API had to submit a paper form, followed by several rounds of correspondence with staff before access was granted.",
         "approach": "I am developing the automated subscription form intended to replace this process: the applicant submits their information, staff validates the request, and access is then provisioned automatically. Built in C# / ASP.NET Core on the backend and Next.js / React on the frontend, on the federation's Azure infrastructure.",
-        "result": "The form is already operational. As the project is recent, no quantified data is available yet, but the time saved for the team is immediate.",
+        "result": "The form is operational. It replaces a workflow that required several staff members for every request.",
         "stack": ["C#", "ASP.NET Core", "Next.js", "React", "Azure SQL Server", "Azure DevOps"],
         "linkHref": null,
         "linkLabel": "Internal project — not public"
@@ -125,11 +126,20 @@
       "downloadLabel": "Download the certificate (PDF)"
     }
   },
+  "Languages": {
+    "items": [
+      { "name": "French", "level": "Native" },
+      { "name": "English", "level": "Fluent (B2) — daily working language at FIBA" },
+      { "name": "Spanish", "level": "Basic (A2)" }
+    ]
+  },
   "Contact": {
     "emailLabel": "Email",
     "email": "adel.djahnit.pro@gmail.com",
     "locationLabel": "Location",
-    "location": "Divonne-les-Bains, France — registered cross-border worker",
+    "location": "Divonne-les-Bains, France — Swiss cross-border permit (G)",
+    "availabilityLabel": "Availability",
+    "availability": "From November 2026 — French-speaking Switzerland (Geneva, Vaud)",
     "cvLabel": "Download CV",
     "cvHref": "/cv-Adel-Djahnit.pdf",
     "linkedinLabel": "LinkedIn",

@@ -20,6 +20,10 @@ export default function Contact() {
           <span className="contact-value">{t("location")}</span>
         </div>
         <div className="contact-item">
+          <span className="contact-label mono">{t("availabilityLabel")}</span>
+          <span className="contact-value">{t("availability")}</span>
+        </div>
+        <div className="contact-item">
           <span className="contact-label mono">CV</span>
           <a className="contact-value" href={t("cvHref")} download>{t("cvLabel")}</a>
         </div>

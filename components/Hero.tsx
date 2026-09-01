@@ -20,7 +20,6 @@ export default function Hero() {
         <circle cx="200" cy="200" r="70" stroke="#46626C" strokeWidth="1.5" strokeOpacity="0.4" />
       </svg>
       <div className="hero-content">
-        <p className="hero-kicker mono hero-animate">{t("kicker")}</p>
         <h1 className="hero-title hero-animate">{t("title")}</h1>
         <p className="hero-role hero-animate">{t("role")}</p>
         <p className="hero-pitch hero-animate">{t("pitch")}</p>
