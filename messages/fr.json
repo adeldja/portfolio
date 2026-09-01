@@ -66,7 +66,7 @@
         "period": "2023 — 2025",
         "role": "Développeur Fullstack (alternance)",
         "context": "L'application était déjà en production à mon arrivée (React Native / Expo, backend Laravel). Pendant deux ans, j'ai développé de nouvelles fonctionnalités et corrigé des anomalies, souvent en tant que seul développeur sur le projet.",
-        "approach": "J'ai géré seul le renouvellement des certificats iOS et résolu un incident critique sur la file de notifications, où environ 3 000 messages se sont retrouvés prêts à être envoyés simultanément ; j'ai pu limiter l'envoi à une centaine de messages. J'ai également ajouté des parcours différenciés selon le profil utilisateur, par exemple un profil « jardinier » disposant de réglages spécifiques.",
+        "approach": "J'ai géré seul le renouvellement des certificats iOS et diagnostiqué puis contenu un incident critique sur la file de notifications, qui menaçait d'envoyer des milliers de messages en une seule fois.",
         "result": "Ma contribution est mentionnée dans ma lettre de recommandation rédigée par la fondatrice de Kunagi (voir ci-dessous).",
         "stack": ["React Native", "Expo", "Laravel", "API REST", "CI/CD"],
         "linkHref": null,
@@ -102,13 +102,13 @@
     "items": [
       {
         "name": "StriveMatch",
-        "description": "Projet réalisé dans le cadre de mon master : une plateforme de mise en relation entre pratiquants sportifs, facilitant l'organisation de sessions.",
+        "description": "Application façon « Tinder du sport » : un système de match par swipe, une carte des propositions de sessions géolocalisées par ville, la possibilité de rejoindre celles des autres membres et des échanges entre membres. Projet de master, soigné jusqu'à la mise au propre.",
         "href": "https://github.com/StriveMatch/strive",
         "linkLabel": "Voir le code"
       },
       {
         "name": "Indep-com",
-        "description": "Projet réalisé durant mes études : un site vitrine et des outils de communication destinés aux indépendants.",
+        "description": "Plateforme de mise en relation entre particuliers et indépendants : un particulier publie un besoin (par exemple un jardinier), les freelances consultent les demandes et candidatent. Projet réalisé durant mes études.",
         "href": "https://github.com/Indep-com/indep",
         "linkLabel": "Voir le code"
       }

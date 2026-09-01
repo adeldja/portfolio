@@ -66,7 +66,7 @@
         "period": "2023 — 2025",
         "role": "Fullstack Developer (work-study)",
         "context": "The application was already in production when I joined (React Native / Expo, Laravel backend). Over two years, I developed new features and fixed issues, often as the sole developer on the project.",
-        "approach": "I independently managed iOS certificate renewals and resolved a critical incident on the notification queue, where approximately 3,000 messages were about to be sent simultaneously; I was able to limit delivery to around a hundred messages. I also added user-specific flows depending on profile, such as a \"gardener\" profile with dedicated settings.",
+        "approach": "I independently handled iOS certificate renewals, and diagnosed and contained a critical incident on the notification queue that threatened to send thousands of messages at once.",
         "result": "My contribution is mentioned in my letter of recommendation from Kunagi's founder (see below).",
         "stack": ["React Native", "Expo", "Laravel", "REST API", "CI/CD"],
         "linkHref": null,
@@ -102,13 +102,13 @@
     "items": [
       {
         "name": "StriveMatch",
-        "description": "Master's project: I built a platform connecting sports practitioners to help organize sessions between individuals.",
+        "description": "A \"sports Tinder\" app: a swipe-based matching system, a map of session proposals geolocated by city, the option to join other members' sessions, and member-to-member messaging. Master's project, polished through to final delivery.",
         "href": "https://github.com/StriveMatch/strive",
         "linkLabel": "View code"
       },
       {
         "name": "Indep-com",
-        "description": "School project: I built a showcase website and communication tools for freelancers.",
+        "description": "A platform connecting individuals with freelancers: a user posts a need (a gardener, for example), and freelancers browse requests and apply. Built during my studies.",
         "href": "https://github.com/Indep-com/indep",
         "linkLabel": "View code"
       }
