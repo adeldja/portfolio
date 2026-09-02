@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import { Analytics } from "@vercel/analytics/next";
 import { Space_Grotesk, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import frMessages from "@/messages/fr.json";
 import "./globals.css";
@@ -37,6 +38,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         className={`${spaceGrotesk.variable} ${ibmPlexSans.variable} ${ibmPlexMono.variable}`}
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );
