@@ -15,9 +15,19 @@ export default function Offers() {
                 <li key={item}>{item}</li>
               ))}
             </ul>
+            <a
+              className="btn btn-outline offer-cta"
+              href={`/services?besoin=${offer.besoin}#contact`}
+            >
+              {offer.cta}
+            </a>
           </article>
         ))}
       </div>
+      <p className="offer-note">
+        Prix indicatifs. Après notre rendez-vous, vous recevez un devis à prix fixe. Paiement en
+        deux fois : 40 % au démarrage, le solde à la livraison.
+      </p>
     </section>
   );
 }

@@ -1,5 +1,3 @@
-import { SERVICES_MAILTO } from "@/lib/services";
-
 export default function Hero() {
   return (
     <section className="hero services-hero">
@@ -13,13 +11,16 @@ export default function Hero() {
           interlocuteur du début à la fin.
         </p>
         <div className="hero-actions">
-          <a href={SERVICES_MAILTO} className="btn btn-primary">
+          <a href="#contact" className="btn btn-primary">
             Demander un devis gratuit
           </a>
           <a href="#offres" className="btn btn-outline">
             Voir les offres
           </a>
         </div>
+        <p className="services-reassure mono">
+          Réponse sous 24 h · Rendez-vous chez vous · Prix fixe
+        </p>
       </div>
     </section>
   );
