@@ -755,3 +755,82 @@ a.contact-value:hover {
     justify-content: center;
   }
 }
+
+/* ---------- Services page ---------- */
+
+.main--no-rail {
+  margin-left: 0;
+}
+
+.services-hero {
+  min-height: 80vh;
+}
+
+.services-kicker {
+  font-size: 0.8rem;
+  color: var(--accent);
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.04em;
+}
+
+.offer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.offer-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--accent);
+  padding: 1.6rem 1.4rem;
+}
+
+.offer-name {
+  font-size: 1.2rem;
+  margin-bottom: 0.4rem;
+}
+
+.offer-price {
+  color: var(--accent);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.offer-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.92rem;
+}
+
+.offer-items li::before {
+  content: "— ";
+  color: var(--text-faint);
+}
+
+.steps {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.step {
+  display: flex;
+  gap: 1.2rem;
+  align-items: baseline;
+}
+
+.step-number {
+  color: var(--accent);
+  font-size: 0.9rem;
+}
+
+.step-title {
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+
