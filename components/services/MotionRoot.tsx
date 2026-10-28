@@ -1,12 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { applyPaused, scrollToTarget } from "./motion/store";
-
-type IdleWindow = Window & {
-  requestIdleCallback?: (callback: () => void, options?: { timeout: number }) => number;
-  cancelIdleCallback?: (handle: number) => void;
-};
+import { applyPaused, scrollToTarget, whenScrollIdle } from "./motion/store";
 
 /**
  * Boots the motion layer of /services. Renders nothing.
@@ -51,25 +46,17 @@ export default function MotionRoot() {
     if (!root) {
       return;
     }
-    const win = window as IdleWindow;
     const reduceQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 
     let generation = 0;
-    let idleHandle: number | null = null;
-    let timeoutHandle: number | null = null;
     let observer: IntersectionObserver | null = null;
     let cleanup: (() => void) | null = null;
+    let cancelIdleWait: (() => void) | null = null;
 
     const stop = () => {
       generation += 1;
-      if (idleHandle !== null) {
-        win.cancelIdleCallback?.(idleHandle);
-        idleHandle = null;
-      }
-      if (timeoutHandle !== null) {
-        window.clearTimeout(timeoutHandle);
-        timeoutHandle = null;
-      }
+      cancelIdleWait?.();
+      cancelIdleWait = null;
       observer?.disconnect();
       observer = null;
       cleanup?.();
@@ -93,26 +80,24 @@ export default function MotionRoot() {
         observer?.observe(element);
       });
 
-      const load = () => {
-        idleHandle = null;
-        timeoutHandle = null;
-        import("./motion/engine")
-          .then((engine) => {
+      // Download the engine right away, but only start it (and let ScrollTrigger
+      // measure the page) once the page is loaded and the user isn't scrolling.
+      import("./motion/engine")
+        .then((engine) => {
+          if (current !== generation || reduceQuery.matches) {
+            return;
+          }
+          cancelIdleWait = whenScrollIdle(() => {
+            cancelIdleWait = null;
             if (current !== generation || reduceQuery.matches) {
               return;
             }
             cleanup = engine.initMotion(root);
-          })
-          .catch(() => {
-            // Motion is an enhancement: the page is complete without it.
           });
-      };
-
-      if (win.requestIdleCallback) {
-        idleHandle = win.requestIdleCallback(load, { timeout: 1500 });
-      } else {
-        timeoutHandle = window.setTimeout(load, 200);
-      }
+        })
+        .catch(() => {
+          // Motion is an enhancement: the page is complete without it.
+        });
     };
 
     const onChange = () => {

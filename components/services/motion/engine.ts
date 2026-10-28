@@ -1,7 +1,7 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "lenis";
-import { registerLenis } from "./store";
+import { registerLenis, whenScrollIdle } from "./store";
 
 type Conditions = { motion: boolean; desktop: boolean; wide: boolean };
 
@@ -343,10 +343,10 @@ export function initMotion(root: HTMLElement): () => void {
         });
       }
 
-      if (document.fonts) {
+      if (document.fonts && document.fonts.status !== "loaded") {
         document.fonts.ready.then(() => {
           if (!disposed) {
-            ScrollTrigger.refresh();
+            disposers.push(whenScrollIdle(() => ScrollTrigger.refresh()));
           }
         });
       }
