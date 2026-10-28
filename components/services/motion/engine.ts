@@ -244,8 +244,10 @@ export function initMotion(root: HTMLElement): () => void {
       }
 
       /* ---------- Titles: words rise from a mask ---------- */
+      // On touch devices, below the story the page scrolls natively with no
+      // scroll-triggered motion: tweens running during iOS momentum read as jumps.
       all("[data-reveal-title]").forEach((title) => {
-        if (!isBelowFold(title)) {
+        if (!isBelowFold(title) || (!desktop && !title.closest("#vitrine"))) {
           return;
         }
         gsap.fromTo(
@@ -262,12 +264,14 @@ export function initMotion(root: HTMLElement): () => void {
       });
 
       /* ---------- Block reveals ---------- */
-      const reveals = all("[data-reveal]").filter(
-        (element) =>
-          !(wide && element.dataset.reveal === "mobile") &&
-          element.offsetParent !== null &&
-          isBelowFold(element)
-      );
+      const reveals = desktop
+        ? all("[data-reveal]").filter(
+            (element) =>
+              !(wide && element.dataset.reveal === "mobile") &&
+              element.offsetParent !== null &&
+              isBelowFold(element)
+          )
+        : [];
       if (reveals.length > 0) {
         gsap.set(reveals, { y: 24, autoAlpha: 0 });
         const onEnter = ctx.add("revealBatch", (batch: Element[]) => {
@@ -297,7 +301,7 @@ export function initMotion(root: HTMLElement): () => void {
 
       /* ---------- Steps: the deck recedes ---------- */
       const stepList = one(".sv-steps");
-      if (stepList) {
+      if (desktop && stepList) {
         const cards = all(".sv-step", stepList);
         const deck = gsap.timeline({
           scrollTrigger: { trigger: stepList, start: "top 15%", end: "bottom 60%", scrub: true },
