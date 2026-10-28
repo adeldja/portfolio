@@ -136,10 +136,6 @@
   scroll-margin-top: 1rem;
 }
 
-html:has(.svc):not(.lenis) {
-  scroll-behavior: smooth;
-}
-
 /* ---------- Themes ---------- */
 
 .svc .sv-theme-night {
@@ -2147,10 +2143,6 @@ html:has(.svc):not(.lenis) {
 /* ---------- Reduced motion ---------- */
 
 @media (prefers-reduced-motion: reduce) {
-  html:has(.svc) {
-    scroll-behavior: auto;
-  }
-
   .svc *,
   .svc *::before,
   .svc *::after {

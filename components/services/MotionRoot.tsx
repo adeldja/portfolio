@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { applyPaused } from "./motion/store";
+import { applyPaused, scrollToTarget } from "./motion/store";
 
 type IdleWindow = Window & {
   requestIdleCallback?: (callback: () => void, options?: { timeout: number }) => number;
@@ -14,6 +14,38 @@ type IdleWindow = Window & {
  * out of the first-load JS.
  */
 export default function MotionRoot() {
+  // CSS scroll-behavior: smooth fights ScrollTrigger's scroll restoration and makes
+  // touch scrolling jump, so in-page anchors are smoothed here instead.
+  useEffect(() => {
+    const onClick = (event: MouseEvent) => {
+      if (
+        event.defaultPrevented ||
+        event.button !== 0 ||
+        event.metaKey ||
+        event.ctrlKey ||
+        event.shiftKey ||
+        event.altKey ||
+        document.documentElement.classList.contains("lenis")
+      ) {
+        return;
+      }
+      const link = (event.target as Element | null)?.closest("a[href^='#']");
+      if (!(link instanceof HTMLAnchorElement)) {
+        return;
+      }
+      const id = decodeURIComponent(link.hash.slice(1));
+      const target = id ? document.getElementById(id) : null;
+      if (!target) {
+        return;
+      }
+      event.preventDefault();
+      scrollToTarget(target);
+      window.history.pushState(window.history.state, "", `#${id}`);
+    };
+    document.addEventListener("click", onClick);
+    return () => document.removeEventListener("click", onClick);
+  }, []);
+
   useEffect(() => {
     const root = document.getElementById("sv-page");
     if (!root) {
