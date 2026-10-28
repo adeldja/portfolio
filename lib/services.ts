@@ -238,3 +238,72 @@ export const serviceFaq: ServiceFaqItem[] = [
       "Oui. Je suis à 20 minutes de Genève et je me déplace aussi à Nyon et dans le canton de Vaud. Le devis est établi en euros ; si vous préférez un montant en francs suisses, dites-le-moi. Une version anglaise du site est possible en option.",
   },
 ];
+
+export const SERVICES_TRADES = [
+  "Boulangerie",
+  "Plombier",
+  "Coiffeuse",
+  "Restaurant",
+  "Électricien",
+  "Fleuriste",
+  "Institut de beauté",
+  "Garage",
+  "Café",
+  "Menuisier",
+];
+
+export const SERVICES_TOWNS = [
+  "Divonne-les-Bains",
+  "Gex",
+  "Ferney-Voltaire",
+  "Saint-Genis-Pouilly",
+  "Pays de Gex",
+  "Nyon",
+  "Genève",
+];
+
+export const SERVICES_TOWNS_SENTENCE =
+  "Pour les commerces, artisans et indépendants de Divonne-les-Bains, Gex, Ferney-Voltaire, Saint-Genis-Pouilly, Nyon et Genève.";
+
+export interface StoryStep {
+  title: string;
+  text: string;
+}
+
+export const serviceStory: StoryStep[] = [
+  {
+    title: "On vous cherche sur un téléphone.",
+    text: "Vos futurs clients tapent votre métier et votre ville sur Google. Votre activité doit apparaître, clairement.",
+  },
+  {
+    title: "Ils trouvent l'essentiel en un coup d'œil.",
+    text: "Horaires, adresse, prestations : tout est lisible sur un petit écran, sans zoomer.",
+  },
+  {
+    title: "Et ils vous contactent en un geste.",
+    text: "Un bouton pour appeler, un formulaire pour demander un devis. Les demandes arrivent directement chez vous.",
+  },
+];
+
+export const storyMockup = {
+  ariaLabel:
+    "Exemple fictif : le site d'une boulangerie sur un téléphone, avec horaires, adresse et bouton Appeler",
+  caption: "Exemple fictif · La Mie du Matin",
+  time: "8:15",
+  search: "boulangerie près de moi",
+  name: "La Mie du Matin",
+  monogram: "M",
+  meta: "Boulangerie · Ouvert",
+  chip: "Site web",
+  headline: "Pain au levain et viennoiseries maison",
+  call: "Appeler",
+  directions: "Itinéraire",
+  hoursTitle: "Ouvert aujourd'hui",
+  hours: "6 h 30 – 19 h 00",
+  mapCaption: "Grand-Rue · Votre ville",
+  chips: ["Baguette tradition", "Croissants", "Gâteaux sur commande"],
+  formTitle: "Commander un gâteau",
+  send: "Envoyer",
+  notifTitle: "Nouveau message · maintenant",
+  notifText: "« Bonjour, vous faites des gâteaux d'anniversaire ? »",
+};

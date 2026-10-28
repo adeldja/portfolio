@@ -1,14 +1,17 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Hero from "@/components/services/Hero";
+import Marquee from "@/components/services/Marquee";
+import Story from "@/components/services/Story";
 import Offers from "@/components/services/Offers";
 import Work from "@/components/services/Work";
 import Steps from "@/components/services/Steps";
 import Guarantees from "@/components/services/Guarantees";
 import Faq from "@/components/services/Faq";
 import Contact from "@/components/services/Contact";
+import Footer from "@/components/services/Footer";
 import StickyBar from "@/components/services/StickyBar";
-import { SERVICES_EMAIL, isBesoin } from "@/lib/services";
+import MotionRoot from "@/components/services/MotionRoot";
+import { SERVICES_EMAIL } from "@/lib/services";
 
 const description =
   "Développeur web basé à Divonne-les-Bains. Sites vitrines, fiche Google et réservation en ligne pour les commerces, artisans et indépendants du Pays de Gex et de la région genevoise.";
@@ -45,35 +48,29 @@ const jsonLd = {
   priceRange: "À partir de 150 €",
 };
 
-export default function ServicesPage({
-  searchParams,
-}: {
-  searchParams: { besoin?: string | string[] };
-}) {
-  const requested = Array.isArray(searchParams.besoin)
-    ? searchParams.besoin[0]
-    : searchParams.besoin;
-  const defaultBesoin = requested && isBesoin(requested) ? requested : "";
-
+export default function ServicesPage() {
   return (
-    <main className="main main--no-rail">
-      <div className="main-inner">
+    <div id="sv-page" className="sv-page">
+      <div className="sv-grain" aria-hidden="true" />
+      <div className="sv-progress" aria-hidden="true" />
+      <main className="sv-main">
         <Hero />
+        <Marquee />
+        <Story />
         <Offers />
         <Work />
         <Steps />
         <Guarantees />
         <Faq />
-        <Contact defaultBesoin={defaultBesoin} />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-        <footer className="services-footer mono">
-          © Adel Djahnit · <Link href="/services/confidentialite">Confidentialité</Link>
-        </footer>
-      </div>
+        <Contact />
+      </main>
+      <Footer />
       <StickyBar />
-    </main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <MotionRoot />
+    </div>
   );
 }
