@@ -19,10 +19,11 @@ export const BESOIN_OPTIONS: ServiceOption[] = [
   { value: "site", label: "Site vitrine" },
   { value: "refonte", label: "Refonte d'un site existant" },
   { value: "maintenance", label: "Suivi et maintenance" },
+  { value: "application", label: "Application mobile ou web" },
   { value: "autre", label: "Je ne sais pas encore" },
 ];
 
-export type Besoin = "google" | "site" | "refonte" | "maintenance" | "autre";
+export type Besoin = "google" | "site" | "refonte" | "maintenance" | "application" | "autre";
 
 export function isBesoin(value: string): value is Besoin {
   return value !== "" && BESOIN_OPTIONS.some((option) => option.value === value);
@@ -117,12 +118,21 @@ export const serviceOffers: ServiceOffer[] = [
   },
   {
     name: "Suivi et maintenance",
-    price: "à partir de 25 € / mois",
+    price: "à partir de 50 € / mois",
     description:
       "Hébergement, mises à jour et petites modifications (horaires, carte, tarifs, photos). Vous m'envoyez un message, je m'en occupe.",
     items: ["Hébergement inclus", "Petites modifications", "Sans engagement"],
     besoin: "maintenance",
     cta: "Je veux le suivi",
+  },
+  {
+    name: "Création d'application",
+    price: "Sur devis",
+    description:
+      "Une application mobile ou web sur mesure, quand un site ne suffit plus : réservation, fidélité, outil pour votre équipe. Chaque projet est différent, le prix aussi : on en parle, puis vous recevez un devis.",
+    items: ["iPhone, Android ou web", "Publication sur l'App Store et Google Play", "Suivi après la mise en ligne"],
+    besoin: "application",
+    cta: "Parler de mon projet",
   },
 ];
 
@@ -137,15 +147,8 @@ export const serviceWork: ServiceWorkItem[] = [
   },
   {
     name: "JSL Judo",
-    type: "Club sportif",
-    description: "Développement du site internet du club avec le framework Symfony.",
-    href: null,
-    linkLabel: null,
-  },
-  {
-    name: "OsUp",
-    type: "Start-up",
-    description: "Développement du site vitrine de la start-up.",
+    type: "Club de judo",
+    description: "Création du site internet du club.",
     href: null,
     linkLabel: null,
   },
@@ -210,7 +213,7 @@ export const serviceFaq: ServiceFaqItem[] = [
   {
     question: "Et ensuite, qu'est-ce que je paie chaque mois ou chaque année ?",
     answer:
-      "Le suivi, à partir de 25 € par mois, comprend l'hébergement du site, les mises à jour et les petites modifications (horaires, tarifs, photos, carte). Il est sans engagement. Le nom de domaine (votre adresse, par exemple votre-commerce.fr) est payé à part, une fois par an : son prix exact figure dans le devis.",
+      "Le suivi, à partir de 50 € par mois, comprend l'hébergement du site, les mises à jour et les petites modifications (horaires, tarifs, photos, carte). Il est sans engagement. Le nom de domaine (votre adresse, par exemple votre-commerce.fr) est payé à part, une fois par an : son prix exact figure dans le devis.",
   },
   {
     question: "En combien de temps mon site est-il en ligne ?",
